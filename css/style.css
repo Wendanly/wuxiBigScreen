@@ -1,0 +1,298 @@
+/*引用字库*/
+@font-face {
+  font-family: 'electronicFont';
+  src: url("../font/DS-DIGI.TTF");
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.h {
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 34px;
+  background-image: url('../img/-e-顶部背景.png');
+  padding-left: 4px;
+  /* padding-right: 4px; */
+  box-sizing: border-box;
+}
+
+.hlogo {
+  margin-top: 3px;
+  width: 64px;
+  height: 19px;
+}
+
+.h-title {
+  position: absolute;
+  top: 4px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.h-left {
+  float: right;
+  width: 145px;
+  color: #ffffff;
+  display: flex;
+  height: 34px;
+  font-size: 12px;
+
+  box-sizing: border-box;
+
+  justify-content: start;
+  /* border: 1px solid #ffffff; */
+}
+
+.h-time {
+  transform: scale(0.8);
+  line-height: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.h-date {
+  transform: scale(0.7);
+  line-height: 10px;
+  margin-left: -8px;
+}
+
+.h-xingqi {
+  transform: scale(0.7);
+  line-height: 13px;
+  text-align: center;
+}
+
+.h-weacher-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 11px;
+}
+
+.h-weacher-img img {
+  width: 9px;
+  height: 9px;
+}
+
+.h-weacher-img div {
+  transform: scale(0.7);
+}
+
+.h-weather {
+  transform: scale(0.7);
+  line-height: 11px;
+}
+
+.h-border {
+  color: #969393;
+}
+
+/* 图表 */
+.h-box {
+  width: 179px;
+  height: 147px;
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.box-char {
+  height: calc(100% - 15px);
+  width: 100%;
+  background: rgb(24, 90, 144, .2)
+}
+
+.box-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-text {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.sufix-icon {
+  width: 16px;
+  height: 7px;
+}
+
+.title-border {
+  position: absolute;
+  right: 0px;
+}
+
+.right-box {
+  position: absolute;
+
+  right: 10px;
+}
+
+.app {
+  top: 34px;
+}
+
+.sex {
+  top: 189px;
+}
+
+.age {
+  top: 348px;
+}
+
+/* 中部区域 */
+.middle {
+  width: 368px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+.middle-xia {
+  bottom: 14px;
+}
+
+/* 人数展示 */
+.middle-shang {
+  width: 368px;
+  height: 50px;
+  /* border: 1px solid red; */
+  top: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.num-view {
+  width: 100px;
+  /* border: 1px solid #ffffff; */
+  text-align: center;
+}
+
+.num-title {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.num-box {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.num-bg {
+  background-image: url('../img/数字底.png');
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.num-led {
+  font-family: 'electronicFont';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* 性别图 */
+.sex-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sex-line {
+  display: flex;
+  align-items: center;
+}
+
+.sex-left {
+  text-align: center;
+  margin-right: 5px;
+}
+
+.sex-left .sex-name {
+  font-size: 8px;
+  transform: scale(0.8);
+  color: #ffffff;
+  line-height: 7px;
+}
+
+.sex-right {
+  height: 29px;
+  width: 300px;
+  background: rgb(24, 90, 144, .3);
+}
+
+.right-wrap {
+  position: relative;
+  margin: 5px;
+  margin-left: 0px;
+  height: 17px;
+}
+
+.sex-nan {
+  background-image: linear-gradient(to right, #2491f8, #aecbe6);
+
+}
+
+.sex-nv {
+  background-image: linear-gradient(to right, #f07f24, #b99170);
+
+}
+
+.box-line {
+  position: absolute;
+  border: 1px solid #0f6dc5;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.line-one {
+  top: 5px;
+}
+
+.line-two {
+  top: 11px;
+}
+
+.box-verital {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 4px;
+  border: 1px solid rgb(24, 90, 144, .3);
+  /* border: 1px solid #3F51B5; */
+}
+
+.box-label {
+  position: absolute;
+  color: #ffffff;
+  font-size: 8px;
+  transform: scale(0.9);
+  text-align: right;
+  /* width: 130%; */
+}

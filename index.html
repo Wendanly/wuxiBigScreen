@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无锡2021物联网博览会</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="config/index.js"></script>
+  <script src="lib/vue.js"></script>
+  <script src="lib/axios.js"></script>
+  <script src="lib/echarts@4.5.js"></script>
+  <script src="lib/moment.js"></script>
+  <script src="lib/tools.js"></script>
+  <style>
+    .webgl-content {
+      width: 768px;
+      height: 512px;
+    }
+
+    #gameContainer {
+      position: absolute;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height:100%"></div>
+      <div class="wrap">
+        <div class="h header">
+          <img class="hlogo" :src='logo' />
+          <div class="h-left">
+            <div class="h-time">{{time}}</div>
+            <span class="h-border">|</span>
+            <div style=" width: 53px;">
+              <div class="h-date">{{year}}/{{month}}/{{day}}</div>
+              <div class="h-xingqi">星期{{getweek }}</div>
+            </div>
+            <span class="h-border">|</span>
+            <div style="width:37px;">
+              <div class="h-weacher-img">
+                <img :src="weatherData.img" alt="">
+                <div>{{weatherData.wea}}</div>
+              </div>
+              <div class="h-weather">{{weatherData.tem}}­°C</div>
+            </div>
+          </div>
+        </div>
+        <div class="h-title">{{pageTitle}}</div>
+        <div class="h-content">
+          <my-box title='省内来源' char='char1'></my-box>
+          <my-box title='国内来源' char='char2'></my-box>
+          <my-box title='国际来源' char='char3'></my-box>
+          <my-box ref='char4' class="right-box app" title='APP排名' char='char4'></my-box>
+          <my-box ref='char5' class="right-box sex" title='性别分布' char='char5'></my-box>
+          <my-box class="right-box age" title='年龄分布' char='char6'></my-box>
+          <my-box class="middle middle-xia" title='客流趋势' char='char7'></my-box>
+          <!-- 人数展示 -->
+          <div class="middle middle-shang">
+            <div class="num-view" v-for='(item,index) in boxList' :key=index>
+              <span class="num-title">{{item.name}}</span>
+              <div class="num-box">
+                <div class="num-bg" v-for='(i,ind) in item.numList' :key=ind>
+                  <span class="num-led" v-text='i'></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <template id="box-template">
+    <div class="h h-box">
+      <div class="box-title">
+        <div class="tile-left">
+          <img :src="preIcon" alt="">
+          <span class="title-text">{{title}}</span>
+        </div>
+        <img class="sufix-icon" :src="sufixIcon" alt="">
+      </div>
+      <img class="title-border" :src="char == 'char7'?bTitleBorder:titleBorder" alt="">
+      <div class="box-char" :id="char" v-if="char != 'char5'"></div>
+      <div class="box-char" v-else>
+        <div class="sex-box">
+          <div class="sex-line" v-for='(pp,indexx) in sexList' :key='indexx'>
+            <div class="sex-left">
+              <img :src="pp.sexPic" alt="">
+              <div class="sex-name">{{pp.name}}</div>
+            </div>
+            <div class="sex-right">
+              <div class="right-wrap" :class='[pp.name == "男"?"sex-nan":"sex-nv"]' :style='{width:pp.width+"px"}'>
+                <div class="box-line line-one"></div>
+                <div class="box-line line-two"></div>
+                <div class="box-verital" v-for='(item,index) in vertialList' :key='index' :style='{left:item}'>
+                </div>
+                <div class='box-label' :style='{left:pp.left+"px"}'>{{pp.num}}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </template>
+  <!-- 业务代码 -->
+  <script src="lib/index.js"></script>
+</body>
+
+</html>
